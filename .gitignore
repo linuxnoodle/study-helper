@@ -1,4 +1,5 @@
 compile_flags.txt
-study-helper
 obj
+study-helper
 .git
+cmake-build-debug

@@ -1,8 +1,12 @@
 # Study Helper
-Little tool I whipped up in around 20 minutes to help me study. Now expanded on for 5 more minutes
-# Configuration Files (plac in the 'cards' folder).
+Little tool I whipped up in around 20 minutes to help me study. Now expanded on for 5 more minutes. Expanded further by waves for about four hours.
+# Configuration Files (place in the 'cards' folder).
 ```js
-// Blank lines & comments are ignored.
+// Single line comments are supported.
+
+/*
+    Multiline comments are also supported.
+ */
 
 // Any line with a question and answer is delimited by " : ". including the spaces.
 QUESTION1 : ANSWER
@@ -13,5 +17,12 @@ QUESTION1 : ANSWER
 ```sh
 git clone https://github.com/linuxnoodle/study-helper
 cd study-helper
+```
+Linux:
+```shell
 make
+```
+Windows
+```shell
+cmake .
 ```
