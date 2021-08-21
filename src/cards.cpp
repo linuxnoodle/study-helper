@@ -28,9 +28,6 @@ std::string trim(const std::string& str, const std::string& whitespace = " \t") 
 
 bool commentOpen = false;
 bool isComment(const std::string& line) {
-    //    if (line.rfind("/*", 0) == 0) commentOpen = true;
-    //    if (line.rfind("*/", 0) == 0) commentOpen = false;
-
     // Handle multi-line comments.
     if (line.rfind("/*", 0) == 0) commentOpen = true;
     if (line.rfind("*/", 0) == 0)
@@ -56,7 +53,7 @@ void parseCards(const std::string& filepath, std::vector<Card> &cards){
 
     // Failsafe.
     if (!file) {
-        std::cerr << "File not found error: Study file was not found.\n";
+        fmt::print(fmt::emphasis::bold | fg(fmt::color::red), "File not found error: Study file was not found.\n");
         std::exit(1);
     }
 
@@ -75,7 +72,7 @@ void parseCards(const std::string& filepath, std::vector<Card> &cards){
 
         // If the line does not have a " : " delimiter, we print an error and exit.
         if (position == std::string::npos) {
-            std::cerr << fmt::format("Parse error: line {} lacks a ' : ' delimiter. Add one and re-run.\n", lineNumber);
+            fmt::print(fmt::emphasis::bold | fg(fmt::color::red), "Parse error: line {} lacks a ' : ' delimiter. Add one and re-run.\n", lineNumber);
             std::exit(1);
         }
 
