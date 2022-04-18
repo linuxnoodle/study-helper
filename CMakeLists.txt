@@ -3,9 +3,9 @@ project(study_helper)
 
 set(CMAKE_CXX_STANDARD 17)
 
-file(GLOB_RECURSE src
-        "src/*.cpp")
+file(GLOB_RECURSE SOURCE_FILES
+        "src/*")
 
 include_directories(include)
 
-add_executable(study_helper ${src})
+add_executable(study_helper ${SOURCE_FILES})
